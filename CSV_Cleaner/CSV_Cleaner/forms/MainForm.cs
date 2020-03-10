@@ -131,9 +131,8 @@ namespace CSV_Cleaner
         {
             if (e.ColumnIndex == 3)
             {
-                MessageBox.Show("attribute: '" +
-                    dgvAttributes.Rows[(e.RowIndex)].Cells[1].Value.ToString()
-                    + "'");
+                ShowAttributeForm showAttributeForm = new ShowAttributeForm(attributes[e.RowIndex]);
+                showAttributeForm.Show();
             }
         }
 

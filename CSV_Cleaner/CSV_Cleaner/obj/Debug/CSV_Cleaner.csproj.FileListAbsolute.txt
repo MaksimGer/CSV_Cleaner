@@ -8,3 +8,13 @@ F:\study\5 course\datamining\programm\CSV_Cleaner\CSV_Cleaner\bin\Debug\CSV_Clea
 F:\study\5 course\datamining\programm\CSV_Cleaner\CSV_Cleaner\bin\Debug\CSV_Cleaner.pdb
 F:\study\5 course\datamining\programm\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.exe
 F:\study\5 course\datamining\programm\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.pdb
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\bin\Debug\CSV_Cleaner.exe.config
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\bin\Debug\CSV_Cleaner.exe
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\bin\Debug\CSV_Cleaner.pdb
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.MainForm.resources
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.forms.ShowAttributeForm.resources
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.forms.ShowDataForm.resources
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.Properties.Resources.resources
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.csproj.GenerateResource.cache
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.exe
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.pdb

@@ -53,6 +53,12 @@
     <Compile Include="forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ShowAttributeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ShowAttributeForm.Designer.cs">
+      <DependentUpon>ShowAttributeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\ShowDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="sources\Writer.cs" />
     <EmbeddedResource Include="forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ShowAttributeForm.resx">
+      <DependentUpon>ShowAttributeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ShowDataForm.resx">
       <DependentUpon>ShowDataForm.cs</DependentUpon>

@@ -68,18 +68,28 @@ namespace CSV_Cleaner
                 attributes.Add(new MyAttribute(header));
             }
 
-            for (int i = 0; i < reader.getRowCount() - 1; i++)  // the reader started from the 1-st row 
-                                                                // (the 0-th row is the headers)
-                                                                // and stopes on the n-th rows(n = getRowCount() - 1)
+            int rowCount = reader.getRowCount() - 1;        // the reader started from the 1-st row 
+                                                            // (the 0-th row is the headers)
+                                                            // and stopes on the n-th rows(n = getRowCount() - 1)
+
+            for (int i = 0; i < rowCount; i++)
             {
                 string[] items = reader.getNextLine();
                 int index = 0;
 
-                foreach (string item in items)
-                {
-                    attributes[index].addValue(item);           // filling List<Attribute> 
+                try { 
+                    foreach (string item in items)
+                    {
+                        attributes[index].addValue(item);           // filling List<Attribute> 
 
-                    index++;
+                        index++;
+                    }
+                }
+                catch(ArgumentOutOfRangeException e)
+                {
+                    MessageBox.Show("В " + i + "строке элементов больше, чем в строке заголовков!" +
+                        "\nПожалуйста проверьте символ разделения элементов!");
+                    break;
                 }
             }
         }
@@ -89,7 +99,6 @@ namespace CSV_Cleaner
             if (reader != null)
             {
                 reader.refreshReader();
-                fillTable();
             }
         }
 
@@ -105,6 +114,7 @@ namespace CSV_Cleaner
                 reader.setDelimiter(delimiters[cmbBoxDelimiter.SelectedIndex]);
                 reader.refreshReader();
                 clearTable();
+                attributes.Clear();
 
                 fillTable();
             }
@@ -157,7 +167,11 @@ namespace CSV_Cleaner
                     //  if(checkBoxSomeMethod.Checked){
                     //      writer.writeLine(cleaner.someMethod(reader.getNextLine()))
                     //  }
-                    writer.writeLine(reader.getNextLine()); 
+                    if (chBoxDelMissVal.Checked)
+                    {
+                        writer.writeLine(Cleaner.cleaningMissingValues(reader.getNextLine(), "N/A"));
+                    }
+                    //writer.writeLine(reader.getNextLine()); 
                 }
 
                 writer.closeWriter();

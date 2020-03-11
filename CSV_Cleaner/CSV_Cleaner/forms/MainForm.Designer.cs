@@ -45,7 +45,7 @@
             this.typeCol = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.showInfoCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chBoxDelMissVal = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttributes)).BeginInit();
@@ -195,15 +195,15 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Выберите пункты очистки:";
             // 
-            // checkBox1
+            // chBoxDelMissVal
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(774, 143);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(143, 30);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Удалить строки \r\nс пустыми значениями";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chBoxDelMissVal.AutoSize = true;
+            this.chBoxDelMissVal.Location = new System.Drawing.Point(774, 143);
+            this.chBoxDelMissVal.Name = "chBoxDelMissVal";
+            this.chBoxDelMissVal.Size = new System.Drawing.Size(143, 30);
+            this.chBoxDelMissVal.TabIndex = 10;
+            this.chBoxDelMissVal.Text = "Удалить строки \r\nс пустыми значениями";
+            this.chBoxDelMissVal.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -221,7 +221,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 518);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chBoxDelMissVal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvAttributes);
             this.Controls.Add(this.btnSave);
@@ -262,7 +262,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn typeCol;
         private System.Windows.Forms.DataGridViewButtonColumn showInfoCol;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chBoxDelMissVal;
         private System.Windows.Forms.CheckBox checkBox2;
     }
 }

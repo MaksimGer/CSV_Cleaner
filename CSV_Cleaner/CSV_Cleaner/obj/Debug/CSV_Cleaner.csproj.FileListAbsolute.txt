@@ -18,3 +18,4 @@ F:\study\5 course\datamining\Программа очистки данных\CSV_
 F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.csproj.GenerateResource.cache
 F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.exe
 F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.pdb
+F:\study\5 course\datamining\Программа очистки данных\CSV_Cleaner\CSV_Cleaner\obj\Debug\CSV_Cleaner.csprojAssemblyReference.cache

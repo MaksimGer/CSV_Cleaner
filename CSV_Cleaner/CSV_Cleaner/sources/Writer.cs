@@ -10,7 +10,7 @@ namespace CSV_Cleaner.sources
     public class Writer
     {
         private string filePath;
-        private char delimiter = ';';
+        private char delimiter = ',';
         private StreamWriter streamWriter;
 
         public Writer(string filePath)
@@ -64,7 +64,14 @@ namespace CSV_Cleaner.sources
 
                 foreach (string attribute in attributes)
                 {
-                    line.Append(attribute + delimiter);
+                    if (!attribute.Contains(delimiter))
+                    {
+                        line.Append(attribute + delimiter);
+                    }
+                    else
+                    {
+                        line.Append("\"" + attribute + "\"" + delimiter);
+                    }
                 }
 
                 line.Remove(line.Length - 1, 1);                    

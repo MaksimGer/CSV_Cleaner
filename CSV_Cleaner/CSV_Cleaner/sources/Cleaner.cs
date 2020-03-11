@@ -27,6 +27,10 @@ namespace CSV_Cleaner.sources
 
         public static string[] cleaningSingleCases(string[] items, ref List<MyAttribute> attributes, int[] checkedIndexes)
         {
+            if(items == null)
+            {
+                return items;
+            }
             // Функция на вход получает очередную строку в виде массива элементов, ссылку на лист атрибутов
             // (для определения количества тех или иных значений в файле) и интовый массив с индексами столбцов,
             // для которых необходимо проводить проверку на единичные значения. 
@@ -38,7 +42,7 @@ namespace CSV_Cleaner.sources
             string item;
             int minCount = 5;
             int badIndex = 0;
-
+            
             try
             {
                 foreach(int index in checkedIndexes)

@@ -29,17 +29,20 @@
         private void InitializeComponent()
         {
             this.dgvShowAttr = new System.Windows.Forms.DataGridView();
+            this.casesNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caseCountCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAttrName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUnicCases = new System.Windows.Forms.Label();
-            this.casesNameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caseCountCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowAttr)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvShowAttr
             // 
+            this.dgvShowAttr.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvShowAttr.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvShowAttr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowAttr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -49,6 +52,16 @@
             this.dgvShowAttr.Name = "dgvShowAttr";
             this.dgvShowAttr.Size = new System.Drawing.Size(566, 398);
             this.dgvShowAttr.TabIndex = 0;
+            // 
+            // casesNameCol
+            // 
+            this.casesNameCol.HeaderText = "Значение атрибута: ";
+            this.casesNameCol.Name = "casesNameCol";
+            // 
+            // caseCountCol
+            // 
+            this.caseCountCol.HeaderText = "Количество случаев:";
+            this.caseCountCol.Name = "caseCountCol";
             // 
             // label1
             // 
@@ -84,16 +97,6 @@
             this.lblUnicCases.Size = new System.Drawing.Size(13, 13);
             this.lblUnicCases.TabIndex = 4;
             this.lblUnicCases.Text = "0";
-            // 
-            // casesNameCol
-            // 
-            this.casesNameCol.HeaderText = "Значение атрибута: ";
-            this.casesNameCol.Name = "casesNameCol";
-            // 
-            // caseCountCol
-            // 
-            this.caseCountCol.HeaderText = "Количество случаев:";
-            this.caseCountCol.Name = "caseCountCol";
             // 
             // ShowAttributeForm
             // 

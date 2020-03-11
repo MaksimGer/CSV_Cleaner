@@ -45,8 +45,8 @@
             this.typeCol = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.showInfoCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.chBoxDelMissVal = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxDelMissVal = new System.Windows.Forms.CheckBox();
+            this.checkBoxDelSingCases = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttributes)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +57,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(958, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(856, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,15 +73,16 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // lblFileNameTitle
             // 
@@ -112,10 +113,11 @@
             // 
             // cmbBoxDelimiter
             // 
+            this.cmbBoxDelimiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbBoxDelimiter.FormattingEnabled = true;
-            this.cmbBoxDelimiter.Location = new System.Drawing.Point(92, 80);
+            this.cmbBoxDelimiter.Location = new System.Drawing.Point(92, 72);
             this.cmbBoxDelimiter.Name = "cmbBoxDelimiter";
-            this.cmbBoxDelimiter.Size = new System.Drawing.Size(121, 21);
+            this.cmbBoxDelimiter.Size = new System.Drawing.Size(41, 32);
             this.cmbBoxDelimiter.TabIndex = 4;
             this.cmbBoxDelimiter.SelectedIndexChanged += new System.EventHandler(this.cmbBoxSepar_SelectedIndexChanged);
             // 
@@ -123,7 +125,7 @@
             // 
             this.btnRead.Location = new System.Drawing.Point(16, 114);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(352, 23);
+            this.btnRead.Size = new System.Drawing.Size(117, 24);
             this.btnRead.TabIndex = 5;
             this.btnRead.Text = "Считать из файла";
             this.btnRead.UseVisualStyleBackColor = true;
@@ -131,9 +133,9 @@
             // 
             // btnShowTable
             // 
-            this.btnShowTable.Location = new System.Drawing.Point(374, 114);
+            this.btnShowTable.Location = new System.Drawing.Point(16, 143);
             this.btnShowTable.Name = "btnShowTable";
-            this.btnShowTable.Size = new System.Drawing.Size(352, 23);
+            this.btnShowTable.Size = new System.Drawing.Size(117, 24);
             this.btnShowTable.TabIndex = 6;
             this.btnShowTable.Text = "Просмотр данных";
             this.btnShowTable.UseVisualStyleBackColor = true;
@@ -141,9 +143,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(774, 248);
+            this.btnSave.Location = new System.Drawing.Point(15, 299);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(140, 23);
+            this.btnSave.Size = new System.Drawing.Size(159, 24);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Сохранить файл";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -151,6 +153,9 @@
             // 
             // dgvAttributes
             // 
+            this.dgvAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAttributes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAttributes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAttributes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -159,9 +164,9 @@
             this.typeCol,
             this.showInfoCol});
             this.dgvAttributes.GridColor = System.Drawing.SystemColors.ControlText;
-            this.dgvAttributes.Location = new System.Drawing.Point(16, 143);
+            this.dgvAttributes.Location = new System.Drawing.Point(189, 80);
             this.dgvAttributes.Name = "dgvAttributes";
-            this.dgvAttributes.Size = new System.Drawing.Size(710, 363);
+            this.dgvAttributes.Size = new System.Drawing.Size(655, 302);
             this.dgvAttributes.TabIndex = 8;
             this.dgvAttributes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttributes_CellClick);
             // 
@@ -189,39 +194,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(771, 119);
+            this.label1.Location = new System.Drawing.Point(12, 199);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Выберите пункты очистки:";
             // 
-            // chBoxDelMissVal
+            // checkBoxDelMissVal
             // 
-            this.chBoxDelMissVal.AutoSize = true;
-            this.chBoxDelMissVal.Location = new System.Drawing.Point(774, 143);
-            this.chBoxDelMissVal.Name = "chBoxDelMissVal";
-            this.chBoxDelMissVal.Size = new System.Drawing.Size(143, 30);
-            this.chBoxDelMissVal.TabIndex = 10;
-            this.chBoxDelMissVal.Text = "Удалить строки \r\nс пустыми значениями";
-            this.chBoxDelMissVal.UseVisualStyleBackColor = true;
+            this.checkBoxDelMissVal.AutoSize = true;
+            this.checkBoxDelMissVal.Location = new System.Drawing.Point(12, 227);
+            this.checkBoxDelMissVal.Name = "checkBoxDelMissVal";
+            this.checkBoxDelMissVal.Size = new System.Drawing.Size(143, 30);
+            this.checkBoxDelMissVal.TabIndex = 10;
+            this.checkBoxDelMissVal.Text = "Удалить строки \r\nс пустыми значениями";
+            this.checkBoxDelMissVal.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxDelSingCases
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(774, 192);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(162, 30);
-            this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "Удалить строки\r\nс единичными значениями\r\n";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxDelSingCases.AutoSize = true;
+            this.checkBoxDelSingCases.Location = new System.Drawing.Point(12, 263);
+            this.checkBoxDelSingCases.Name = "checkBoxDelSingCases";
+            this.checkBoxDelSingCases.Size = new System.Drawing.Size(162, 30);
+            this.checkBoxDelSingCases.TabIndex = 11;
+            this.checkBoxDelSingCases.Text = "Удалить строки\r\nс единичными значениями\r\n";
+            this.checkBoxDelSingCases.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 518);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.chBoxDelMissVal);
+            this.ClientSize = new System.Drawing.Size(856, 394);
+            this.Controls.Add(this.checkBoxDelSingCases);
+            this.Controls.Add(this.checkBoxDelMissVal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvAttributes);
             this.Controls.Add(this.btnSave);
@@ -262,8 +267,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn typeCol;
         private System.Windows.Forms.DataGridViewButtonColumn showInfoCol;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox chBoxDelMissVal;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxDelMissVal;
+        private System.Windows.Forms.CheckBox checkBoxDelSingCases;
     }
 }
 

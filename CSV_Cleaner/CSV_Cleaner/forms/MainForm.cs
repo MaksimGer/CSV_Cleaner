@@ -19,6 +19,7 @@ namespace CSV_Cleaner
 
         char[] delimiters = { ',', ';', '|' };
         string[] types = { "String", "Integet", "Double", "Bool" };
+        List<int> usedAttributes = new List<int>();
         List<MyAttribute> attributes = new List<MyAttribute>();
 
         public MainForm()
@@ -62,7 +63,7 @@ namespace CSV_Cleaner
             {
                 rowNumber = dgvAttributes.Rows.Add();
 
-                dgvAttributes.Rows[rowNumber].Cells[0].Value = true;
+                dgvAttributes.Rows[rowNumber].Cells[0].Value = false;
                 dgvAttributes.Rows[rowNumber].Cells[1].Value = header;
 
                 attributes.Add(new MyAttribute(header));
@@ -129,6 +130,7 @@ namespace CSV_Cleaner
             if (reader != null && reader.getFilePath() != null)
             {
                 ShowDataForm showDataForm = new ShowDataForm(this, ref reader);
+                showDataForm.StartPosition = FormStartPosition.CenterParent;
                 showDataForm.Show();
             }
             else
@@ -142,6 +144,7 @@ namespace CSV_Cleaner
             if (e.ColumnIndex == 3)
             {
                 ShowAttributeForm showAttributeForm = new ShowAttributeForm(attributes[e.RowIndex]);
+                showAttributeForm.StartPosition = FormStartPosition.CenterParent;
                 showAttributeForm.Show();
             }
         }
@@ -159,22 +162,23 @@ namespace CSV_Cleaner
                 }
 
                 writer.writeLine(reader.getHeaders().ToArray());
+                string[] curLine;
 
                 for (int i = 0; i < reader.getRowCount() - 1; i++)
                 {
-                    // --------------------- Add cleaning functions ---------------------
-                    //
-                    //  if(checkBoxSomeMethod.Checked){
-                    //      writer.writeLine(cleaner.someMethod(reader.getNextLine()))
-                    //  }
-                    if (chBoxDelMissVal.Checked)
+                    curLine = reader.getNextLine();   // считываем строку(получаем массив значений)
+
+                    if (checkBoxDelMissVal.Checked) // удаляем строку, если есть пропуск
                     {
-                        writer.writeLine(Cleaner.cleaningMissingValues(reader.getNextLine(), "N/A"));
+                        curLine = Cleaner.cleaningMissingValues(curLine, "N/A");   
                     }
-                    else
+                    if (checkBoxDelSingCases.Checked) // удаляем строку с единичным значением
                     {
-                        writer.writeLine(reader.getNextLine());
+                        fillUsedeAttr();
+                        curLine = Cleaner.cleaningSingleCases(curLine, ref attributes, usedAttributes.ToArray());
                     }
+                                        
+                    writer.writeLine(curLine);                    
                 }
 
                 writer.closeWriter();
@@ -183,6 +187,27 @@ namespace CSV_Cleaner
             {
                 MessageBox.Show("Выберите исходный файл!");
             }
+        }
+
+        private void fillUsedeAttr()
+        {
+            usedAttributes.Clear();
+
+            if (dgvAttributes.Rows.Count > 0)
+            {
+                for(int i = 0; i < dgvAttributes.Rows.Count - 1; i++)
+                {
+                    if ((bool)dgvAttributes.Rows[i].Cells[0].Value)
+                    {
+                        usedAttributes.Add(i);
+                    }
+                }
+            }
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

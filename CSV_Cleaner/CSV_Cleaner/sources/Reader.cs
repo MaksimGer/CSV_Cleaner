@@ -127,7 +127,7 @@ namespace CSV_Cleaner.sources
             return false;
         }
 
-        private void closeCSVParser()
+        public void closeCSVParser()
         {
             if (csvParser != null)
             {

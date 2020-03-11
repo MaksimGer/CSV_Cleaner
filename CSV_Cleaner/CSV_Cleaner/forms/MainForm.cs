@@ -17,7 +17,7 @@ namespace CSV_Cleaner
         Reader reader;
         Writer writer;
 
-        char[] delimiters = { ';', ',', '|' };
+        char[] delimiters = { ',', ';', '|' };
         string[] types = { "String", "Integet", "Double", "Bool" };
         List<MyAttribute> attributes = new List<MyAttribute>();
 
@@ -171,7 +171,10 @@ namespace CSV_Cleaner
                     {
                         writer.writeLine(Cleaner.cleaningMissingValues(reader.getNextLine(), "N/A"));
                     }
-                    //writer.writeLine(reader.getNextLine()); 
+                    else
+                    {
+                        writer.writeLine(reader.getNextLine());
+                    }
                 }
 
                 writer.closeWriter();
